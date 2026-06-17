@@ -1,0 +1,1 @@
+Deploy with `kubectl create deployment log-output-dep --image=niksubbo/log-output`
