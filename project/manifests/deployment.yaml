@@ -14,4 +14,9 @@ spec:
     spec:
       containers:
         - name: todo-app
-          image: niksubbo/todo-app:0471426b83e911b3ffc04b88ac71afaae44b3381
+          image: niksubbo/todo-app:f39b71bc26b602f7f98c66aa7563d0e3e6a345d8
+          env:
+            - name: GREETING
+              value: "Yo! What's up?"
+            - name: PORT
+              value: "5000"
