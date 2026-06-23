@@ -2,10 +2,10 @@ FROM node:24-alpine
 
 WORKDIR /app
 
-COPY package* .
+COPY package*.json .
 
 RUN npm i
 
 COPY . .
 
-CMD ["npm", "start"]
+CMD ["node", "index.js"]

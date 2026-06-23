@@ -1,11 +1,14 @@
 const { randomUUID } = require("crypto");
+const express = require("express");
+const app = express();
+const port = process.env.PORT || 3000;
 
 const string = randomUUID();
 
-const log = () => {
-  console.log(`${new Date().toISOString()}-${string}`);
+app.get("/", (req, res) => {
+  res.send(`${new Date().toISOString()}-${string}`);
+});
 
-  setTimeout(log, 5000);
-};
-
-log();
+app.listen(port, () => {
+  console.log(`Server started in port ${port}`);
+});
