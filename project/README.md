@@ -10,3 +10,5 @@ Create cluster: `k3d cluster create -a 2`
 Add deployment: `kubectl apply -f manifests/deployment.yaml`<br>
 Add service: `kubectl apply -f manifests/service.yaml`<br>
 Go to: http://localhost:8082/
+
+1.8. `kubectl apply -f manifests` => http://localhost:8081/
