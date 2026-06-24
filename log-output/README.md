@@ -14,7 +14,7 @@ Go to: http://localhost:8081/
 http://localhost:8081/
 
 1.11. `k3d cluster create -p 8081:80@loadbalancer --agents 2`<br>
-Create the local path in the node we are binding it to: `docker exec k3d-k3s-default-agent-0 mkdir -p /tmp/kube`<br>
+Create the local directory on the node we’re binding to using: `docker exec k3d-k3s-default-agent-0 mkdir -p /tmp/kube`<br>
 `kubectl apply -f manifests`<br>
 `kubectl apply -f manifests/pingpong`<br>
 Output: http://localhost:8081/<br>
