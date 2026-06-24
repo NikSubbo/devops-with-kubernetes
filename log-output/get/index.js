@@ -5,16 +5,23 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 
-const logFile = path.join(__dirname, "files", "log.txt");
+const filesDir = path.join(__dirname, "files");
+const logFile = path.join(filesDir, "log.txt");
+const pingpongFile = path.join(filesDir, "pingpong.txt");
 
 app.get("/", (req, res) => {
   let logs = "No logs yet";
+  let count = 0;
 
   if (fs.existsSync(logFile)) {
     logs = fs.readFileSync(logFile, "utf8");
   }
 
-  res.send(logs);
+  if (fs.existsSync(pingpongFile)) {
+    count = fs.readFileSync(pingpongFile, "utf8");
+  }
+
+  res.send(`${logs}\nPing / Pongs: ${count}`);
 });
 
 app.listen(port, () => {

@@ -11,10 +11,6 @@ if (!fs.existsSync(filesDir)) {
 
 const logFile = path.join(filesDir, "log.txt");
 
-const logStream = fs.createWriteStream(logFile, {
-  flags: "a", // append mode
-});
-
 setInterval(() => {
-  logStream.write(`${new Date().toISOString()}-${string}\n`);
+  fs.writeFileSync(logFile, `${new Date().toISOString()}-${string}`);
 }, 5000);
