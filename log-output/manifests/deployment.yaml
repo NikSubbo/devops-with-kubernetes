@@ -13,16 +13,17 @@ spec:
         app: log-output
     spec:
       volumes:
-        - name: shared-image
-          emptyDir: {}
+        - name: shared-pvc
+          persistentVolumeClaim:
+            claimName: log-output-pv-claim
       containers:
         - name: log-output-add
-          image: niksubbo/log-output-add:3ca04221c8a708a0a2e58042a943c1ba5d5b0daa
+          image: niksubbo/log-output-add:3ca04221c8a708a0a2e58042a943c1ba5d5b0daa # change
           volumeMounts:
-            - name: shared-image
+            - name: shared-pvc
               mountPath: /app/files
         - name: log-output-get
-          image: niksubbo/log-output-get:5802f7cd8c108fa2934f9f92a02994afed842956
+          image: niksubbo/log-output-get:5802f7cd8c108fa2934f9f92a02994afed842956 # change
           volumeMounts:
-            - name: shared-image
+            - name: shared-pvc
               mountPath: /app/files
