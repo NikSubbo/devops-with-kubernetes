@@ -17,12 +17,12 @@ spec:
           emptyDir: {}
       containers:
         - name: log-output-add
-          image: niksubbo/log-output:e41c82d0dde84da4d164c0d63bef85c706587f85
+          image: niksubbo/log-output-add:3ca04221c8a708a0a2e58042a943c1ba5d5b0daa
           volumeMounts:
             - name: shared-image
               mountPath: /app/files
         - name: log-output-get
-          image: niksubbo/log-output:e41c82d0dde84da4d164c0d63bef85c706587f85
+          image: niksubbo/log-output-get:5802f7cd8c108fa2934f9f92a02994afed842956
           volumeMounts:
             - name: shared-image
               mountPath: /app/files
