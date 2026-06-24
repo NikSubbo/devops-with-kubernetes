@@ -18,7 +18,7 @@ spec:
             claimName: log-output-pv-claim
       containers:
         - name: ping-pong
-          image: niksubbo/ping-pong:be984fb8c795b4f55e5bbf3f167be6a3db758e5f # change
+          image: niksubbo/ping-pong:c3b2678cf19f2e3b12bdc07c25357fe550ac3ffb
           volumeMounts:
             - name: shared-pvc
               mountPath: /app/files

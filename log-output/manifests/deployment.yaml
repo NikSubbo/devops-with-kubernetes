@@ -18,12 +18,12 @@ spec:
             claimName: log-output-pv-claim
       containers:
         - name: log-output-add
-          image: niksubbo/log-output-add:3ca04221c8a708a0a2e58042a943c1ba5d5b0daa # change
+          image: niksubbo/log-output-add:c3b2678cf19f2e3b12bdc07c25357fe550ac3ffb
           volumeMounts:
             - name: shared-pvc
               mountPath: /app/files
         - name: log-output-get
-          image: niksubbo/log-output-get:5802f7cd8c108fa2934f9f92a02994afed842956 # change
+          image: niksubbo/log-output-get:c3b2678cf19f2e3b12bdc07c25357fe550ac3ffb
           volumeMounts:
             - name: shared-pvc
               mountPath: /app/files
