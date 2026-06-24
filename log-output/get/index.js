@@ -7,13 +7,13 @@ const port = process.env.PORT || 3000;
 
 const logFile = path.join(__dirname, "files", "log.txt");
 
-const logs = "No logs yet";
-
-if (fs.existsSync(logFile)) {
-  const logs = fs.readFileSync(logFile, "utf8");
-}
-
 app.get("/", (req, res) => {
+  let logs = "No logs yet";
+
+  if (fs.existsSync(logFile)) {
+    logs = fs.readFileSync(logFile, "utf8");
+  }
+
   res.send(logs);
 });
 
