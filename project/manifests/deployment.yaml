@@ -12,11 +12,16 @@ spec:
       labels:
         app: todo-app
     spec:
+      volumes:
+        - name: shared-pvc
+          persistentVolumeClaim:
+            claimName: project-pv-claim
       containers:
         - name: todo-app
           image: niksubbo/todo-app:f39b71bc26b602f7f98c66aa7563d0e3e6a345d8
           env:
-            - name: GREETING
-              value: "Yo! What's up?"
             - name: PORT
               value: "5000"
+          volumeMounts:
+            - name: shared-pvc
+              mountPath: /app/files

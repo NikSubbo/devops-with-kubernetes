@@ -1,9 +1,19 @@
+const path = require("path");
+const { getPhoto } = require("./get-photo.js");
+
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-  res.send(process.env.GREETING || "Hello World!");
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
+app.get("/", async (req, res) => {
+  const photoUrl = await getPhoto();
+
+  res.render("index", {
+    imageSrc: photoUrl,
+  });
 });
 
 app.listen(port, () => {
