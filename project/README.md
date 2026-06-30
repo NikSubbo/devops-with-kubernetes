@@ -12,3 +12,9 @@ Add service: `kubectl apply -f manifests/service.yaml`<br>
 Go to: http://localhost:8082/
 
 1.8. `kubectl apply -f manifests` => http://localhost:8081/
+
+1.12. `k3d cluster create -p 8081:80@loadbalancer --agents 2`<br>
+Create the local directory on the node we’re binding to using: `docker exec k3d-k3s-default-agent-0 mkdir -p /tmp/kube`<br>
+`kubectl apply -f manifests`<br>
+Output: http://localhost:8081/<br>
+Run `kubectl delete pod <pod_name>` to verify that image is cached in the persistent volume
