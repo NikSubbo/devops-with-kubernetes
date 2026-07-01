@@ -3,10 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
     <title>ToDo App</title>
   </head>
   <body>
-    <h1>ToDo App</h1>
-    <img src="<%= imageSrc %>" />
+    <div class="container">
+      <h1>Todo App</h1>
+
+      <img src="<%= imageSrc %>" alt="Todo" />
+
+      <div class="form">
+        <input
+          type="text"
+          placeholder="Enter a new todo (max 140 characters)"
+          maxlength="140"
+        />
+        <button>Send</button>
+      </div>
+
+      <h2>Todos</h2>
+
+      <div class="todo">Learn Kubernetes</div>
+      <div class="todo">Deploy application to cluster</div>
+      <div class="todo">Configure persistent volumes</div>
+    </div>
   </body>
 </html>
