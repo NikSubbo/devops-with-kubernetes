@@ -12,13 +12,6 @@ spec:
       labels:
         app: ping-pong
     spec:
-      volumes:
-        - name: shared-pvc
-          persistentVolumeClaim:
-            claimName: log-output-pv-claim
       containers:
         - name: ping-pong
           image: niksubbo/ping-pong:c3b2678cf19f2e3b12bdc07c25357fe550ac3ffb
-          volumeMounts:
-            - name: shared-pvc
-              mountPath: /app/files

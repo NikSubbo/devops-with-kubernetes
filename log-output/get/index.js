@@ -7,21 +7,14 @@ const port = process.env.PORT || 3000;
 
 const filesDir = path.join(__dirname, "files");
 const logFile = path.join(filesDir, "log.txt");
-const pingpongFile = path.join(filesDir, "pingpong.txt");
 
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
   let logs = "No logs yet";
-  let count = 0;
 
-  if (fs.existsSync(logFile)) {
-    logs = fs.readFileSync(logFile, "utf8");
-  }
+  const response = await fetch("http://ping-pong-svc:2346/pings");
+  const data = await response.json();
 
-  if (fs.existsSync(pingpongFile)) {
-    count = fs.readFileSync(pingpongFile, "utf8");
-  }
-
-  res.send(`${logs}\nPing / Pongs: ${count}`);
+  res.send(`${logs}\nPing / Pongs: ${data.count}`);
 });
 
 app.listen(port, () => {
