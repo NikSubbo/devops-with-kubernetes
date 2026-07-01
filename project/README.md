@@ -18,3 +18,5 @@ Create the local directory on the node we’re binding to using: `docker exec k3
 `kubectl apply -f manifests`<br>
 Output: http://localhost:8081/<br>
 Run `kubectl delete pod <pod_name>` to verify that image is cached in the persistent volume
+
+1.13. Same as 1.12.
