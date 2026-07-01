@@ -19,3 +19,5 @@ Create the local directory on the node we’re binding to using: `docker exec k3
 `kubectl apply -f manifests/pingpong`<br>
 Output: http://localhost:8081/<br>
 Increment pingpong count: http://localhost:8081/pingpong
+
+2.1. Same as 1.11.

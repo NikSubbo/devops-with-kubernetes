@@ -23,7 +23,7 @@ spec:
             - name: shared-pvc
               mountPath: /app/files
         - name: log-output-get
-          image: niksubbo/log-output-get:c3b2678cf19f2e3b12bdc07c25357fe550ac3ffb
+          image: niksubbo/log-output-get:5cb5ffe0e06340cf61a3268b2ccba2d72bd6b0f8
           volumeMounts:
             - name: shared-pvc
               mountPath: /app/files

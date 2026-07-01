@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: ping-pong
-          image: niksubbo/ping-pong:c3b2678cf19f2e3b12bdc07c25357fe550ac3ffb
+          image: niksubbo/ping-pong:995e6a2975b003f2e563909f4eff1cae0ad1d30d
