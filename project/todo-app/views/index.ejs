@@ -12,20 +12,27 @@
 
       <img src="<%= imageSrc %>" alt="Todo" />
 
-      <div class="form">
+      <form class="form" action="/todos" method="POST">
         <input
           type="text"
+          name="todo"
           placeholder="Enter a new todo (max 140 characters)"
           maxlength="140"
         />
-        <button>Send</button>
-      </div>
+        <button type="submit">Send</button>
+      </form>
 
       <h2>Todos</h2>
 
-      <div class="todo">Learn Kubernetes</div>
-      <div class="todo">Deploy application to cluster</div>
-      <div class="todo">Configure persistent volumes</div>
+      <% if (todos.length === 0) { %>
+        <p>No todos yet.</p>
+      <% } else { %>
+        <ul>
+          <% todos.forEach(todo => { %>
+            <li><%= todo.title %></li>
+          <% }) %>
+        </ul>
+      <% } %>
     </div>
   </body>
 </html>
