@@ -14,7 +14,7 @@ app.set("views", path.join(__dirname, "views"));
 app.get("/", async (req, res) => {
   const photoUrl = await getPhoto();
 
-  const response = await fetch("http://todo-backend-svc:3001/todos");
+  const response = await fetch("http://todo-backend-svc:2346/todos");
   const todos = await response.json();
 
   res.render("index", {
