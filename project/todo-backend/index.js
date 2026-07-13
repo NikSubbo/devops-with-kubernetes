@@ -6,7 +6,7 @@ const app = express();
 const port = process.env.PORT || 3001;
 const todos = [];
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.get("/todos", async (req, res) => {
   res.json(todos);

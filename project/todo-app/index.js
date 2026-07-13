@@ -5,6 +5,7 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 
 app.set("view engine", "ejs");
@@ -19,6 +20,18 @@ app.get("/", async (req, res) => {
   res.render("index", {
     imageSrc: photoUrl,
     todos,
+  });
+});
+
+app.post("/todos", async (req, res) => {
+  await fetch("http://todo-backend-svc:2346/todos", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      todo: req.body.todo,
+    }),
   });
 });
 
