@@ -20,3 +20,5 @@ Output: http://localhost:8081/<br>
 Run `kubectl delete pod <pod_name>` to verify that image is cached in the persistent volume
 
 1.13. Same as 1.12.
+
+2.2. Same as 1.12.
