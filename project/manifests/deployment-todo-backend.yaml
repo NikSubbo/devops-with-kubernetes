@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: todo-backend
-          image: niksubbo/todo-backend:c06cddcb8c12702beb495aeb354d5cec64e529e7
+          image: niksubbo/todo-backend:4e2bca634968437828025d8674f2741ed5ea8f81

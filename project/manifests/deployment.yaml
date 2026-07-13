@@ -18,7 +18,7 @@ spec:
             claimName: project-pv-claim
       containers:
         - name: todo-app
-          image: niksubbo/todo-app:c06cddcb8c12702beb495aeb354d5cec64e529e7
+          image: niksubbo/todo-app:4e2bca634968437828025d8674f2741ed5ea8f81
           env:
             - name: PORT
               value: "5000"

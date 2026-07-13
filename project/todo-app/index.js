@@ -33,6 +33,8 @@ app.post("/todos", async (req, res) => {
       todo: req.body.todo,
     }),
   });
+
+  res.redirect("/");
 });
 
 app.listen(port, () => {
