@@ -21,3 +21,7 @@ Output: http://localhost:8081/<br>
 Increment pingpong count: http://localhost:8081/pingpong
 
 2.1. Same as 1.11.
+
+2.3. `kubectl apply -f manifests/namespace.yaml`<br>
+`kubectl apply -f manifests`<br>
+`kubectl apply -f manifests/pingpong`<br>
